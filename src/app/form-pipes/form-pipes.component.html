@@ -1,0 +1,42 @@
+
+ <h1>{{fechaActual | date: 'medium'}}</h1>
+ <h1>Alumnos</h1>  
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+        @for (itemAlumno of alumnos; track $index) {
+            <tr >
+                <th scope="row">{{itemAlumno.nombre | uppercase}}</th>
+                <th scope="row">{{itemAlumno.nombre | lowercase}}</th>
+                <th scope="row">{{itemAlumno.nombre | titlecase}}</th>
+              <tr>
+        }
+        
+         
+        </tbody>
+      </table>
+      <h1>listado de cursos</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+        @for (itemCurso of curso; track $index) {
+            <tr >
+                <th scope="row">{{itemCurso.nombre}}</th>
+                <th scope="row">{{itemCurso.profesor}}</th>
+                <th scope="row">{{itemCurso.precio| currency: 'S/.' }}</th>
+              <tr>
+        }
+        
+         
+        </tbody>
+      </table>
